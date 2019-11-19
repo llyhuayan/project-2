@@ -1,12 +1,7 @@
+# 存放数据模型相关代码，待用
+
 from datetime import datetime
-from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
-
-app = Flask(__name__)
-
-app.config.update(dict(SECRET_KEY = 'very seret key',
-    SQLALCHEMY_DATABASE_URL='mysql+mysqldb://root@localhost:3306/simpledu?charset=utf8'
-    ))
 
 db = SQLAlchemy(app)
 
@@ -29,24 +24,3 @@ class Course(db.Model):
     author = db.relationship('User', uselist=False)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     updated_at = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
-
-
-
-@app.route('/')
-def index():
-    courses = Course.query.all()
-    return render_template('index.html', courses=courses)
-
-@app.route('/admin')
-def admin_index():
-    return 'admin'
-
-if __name__=='__main__':
-    app.run()
-
-
-
-
-
-
-
