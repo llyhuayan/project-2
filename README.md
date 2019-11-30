@@ -18,11 +18,12 @@ character-set-server = utf8
 default-character-set = utf8
 
 
-#打开MySQL服务
+#安装
 sudo apt-get install mysql-server
 
-sudo apt-get install mysql-client          
+sudo apt-get install mysql-client 
 
+#检验安装是否成功
 sudo netstat -tap | grep mysql 
 
 #修改
