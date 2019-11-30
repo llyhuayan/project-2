@@ -12,7 +12,7 @@ class User(db.Model):
     username = db.Column(db.String(32),unique=True, index=True, nullable=False)
     publish_courses = db.relationship('Course')
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
-    update_at = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+    updated_at = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 
 
 class Course(db.Model):
