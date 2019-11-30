@@ -3,7 +3,7 @@
 from datetime import datetime
 from flask_sqlalchemy import SQLAlchemy
 
-db = SQLAlchemy(app)
+db = SQLAlchemy()
 
 class User(db.Model):
     __tablename__='user'
