@@ -18,27 +18,39 @@ character-set-server = utf8
 default-character-set = utf8
 
 
-#?? MySQL ????????
+#打开MySQL服务
 sudo apt-get install mysql-server
 
 sudo apt-get install mysql-client          
-# 创建数据库
 
 sudo netstat -tap | grep mysql 
 
+#修改
 sudo gedit /etc/mysql/my.cnf 
 
+#打开MySQL服务
+$ sudo service mysql start
+
+#使用root用户登录，密码为空
+$ mysql -u root
+
+#创建数据库
+$ mysql> create database simpledu;
+
+#显示数据库
 show databases;
 
-use <????>;
+#连接数据库
+use name;
 
+#查看数据库表
 show tables;
 
-quit ?? exit 
+# 查看表中内容
+select * from name;
+#退出
+quit / exit 
 
-sudo service mysql start
-mysql -u root
 
-mysql> create database simpledu;
 
 ```
